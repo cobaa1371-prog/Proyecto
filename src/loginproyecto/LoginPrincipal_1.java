@@ -178,7 +178,7 @@ public class LoginPrincipal_1 extends javax.swing.JFrame {
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {
             JOptionPane.showMessageDialog(null, "Acceso permitido");
-            FrmPrincipal p = new FrmPrincipal();
+            FrmVentas p = new FrmVentas();
             p.setVisible(true);
             this.dispose();
         } else {
