@@ -4,6 +4,7 @@
  */
 package loginproyecto;
 
+import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -58,7 +59,7 @@ public class FrmCorteDeCaja extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        pnPrincipal = new javax.swing.JPanel();
         lblFecha = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -74,20 +75,24 @@ public class FrmCorteDeCaja extends javax.swing.JFrame {
         panelArriba.setBackground(new java.awt.Color(255, 153, 0));
         panelArriba.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnmenu.setBackground(new java.awt.Color(0, 0, 0));
-        btnmenu.setForeground(new java.awt.Color(255, 255, 255));
-        btnmenu.setText("+");
+        btnmenu.setBackground(new java.awt.Color(255, 153, 0));
+        btnmenu.setForeground(new java.awt.Color(255, 102, 0));
+        btnmenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/barra-de-menus.png"))); // NOI18N
+        btnmenu.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 153, 0), new java.awt.Color(255, 153, 0)));
+        btnmenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnmenu.addActionListener(this::btnmenuActionPerformed);
         panelArriba.add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 47, 38));
 
         panelMenu.setBackground(new java.awt.Color(0, 0, 0));
         panelMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnventas.setBackground(new java.awt.Color(0, 0, 0));
+        btnventas.setBackground(new java.awt.Color(102, 102, 102));
         btnventas.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
         btnventas.setForeground(new java.awt.Color(255, 255, 255));
+        btnventas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/etiqueta-de-venta.png"))); // NOI18N
         btnventas.setText("Ventas");
         btnventas.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        btnventas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnventas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnventasMouseClicked(evt);
@@ -96,40 +101,55 @@ public class FrmCorteDeCaja extends javax.swing.JFrame {
         btnventas.addActionListener(this::btnventasActionPerformed);
         panelMenu.add(btnventas, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 103, 158, 48));
 
-        btncaja.setBackground(new java.awt.Color(0, 0, 0));
+        btncaja.setBackground(new java.awt.Color(102, 102, 102));
         btncaja.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
         btncaja.setForeground(new java.awt.Color(255, 255, 255));
+        btncaja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lista-de-verificacion.png"))); // NOI18N
         btncaja.setText("Corte de caja");
+        btncaja.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btncaja.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btncajaMouseClicked(evt);
             }
         });
+        btncaja.addActionListener(this::btncajaActionPerformed);
         panelMenu.add(btncaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 169, 158, 50));
 
-        btninventario.setBackground(new java.awt.Color(0, 0, 0));
+        btninventario.setBackground(new java.awt.Color(102, 102, 102));
         btninventario.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
         btninventario.setForeground(new java.awt.Color(255, 255, 255));
+        btninventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inventario-disponible.png"))); // NOI18N
         btninventario.setText("Inventario");
+        btninventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btninventario.addActionListener(this::btninventarioActionPerformed);
         panelMenu.add(btninventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 240, 158, 50));
 
-        btnnoti.setBackground(new java.awt.Color(0, 0, 0));
+        btnnoti.setBackground(new java.awt.Color(102, 102, 102));
         btnnoti.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
         btnnoti.setForeground(new java.awt.Color(255, 255, 255));
+        btnnoti.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/activo.png"))); // NOI18N
         btnnoti.setText("Notificaciones");
-        panelMenu.add(btnnoti, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 308, 158, 50));
+        btnnoti.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panelMenu.add(btnnoti, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 308, 160, 50));
 
-        jButton6.setBackground(new java.awt.Color(0, 0, 0));
+        jButton6.setBackground(new java.awt.Color(102, 102, 102));
         jButton6.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/transaccion.png"))); // NOI18N
         jButton6.setText("Transacciones");
+        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         panelMenu.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 376, 158, 50));
 
-        jButton7.setBackground(new java.awt.Color(0, 0, 0));
+        jButton7.setBackground(new java.awt.Color(102, 102, 102));
         jButton7.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("Cerrar Sesión");
+        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
         jButton7.addActionListener(this::jButton7ActionPerformed);
         panelMenu.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 485, 158, 50));
 
@@ -155,11 +175,11 @@ public class FrmCorteDeCaja extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        panelMenu.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 21, 190, 50));
+        panelMenu.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 190, 70));
 
         lblFecha.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
@@ -191,15 +211,15 @@ public class FrmCorteDeCaja extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Fin de Turno");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnPrincipalLayout = new javax.swing.GroupLayout(pnPrincipal);
+        pnPrincipal.setLayout(pnPrincipalLayout);
+        pnPrincipalLayout.setHorizontalGroup(
+            pnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnPrincipalLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(pnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(pnPrincipalLayout.createSequentialGroup()
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -209,15 +229,15 @@ public class FrmCorteDeCaja extends javax.swing.JFrame {
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        pnPrincipalLayout.setVerticalGroup(
+            pnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(pnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
                         .addComponent(lblFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(pnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -235,7 +255,7 @@ public class FrmCorteDeCaja extends javax.swing.JFrame {
             .addGroup(panelPrincipalLayout.createSequentialGroup()
                 .addComponent(panelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panelPrincipalLayout.setVerticalGroup(
@@ -246,7 +266,7 @@ public class FrmCorteDeCaja extends javax.swing.JFrame {
                     .addComponent(panelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelPrincipalLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(pnPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -297,6 +317,16 @@ public class FrmCorteDeCaja extends javax.swing.JFrame {
         v.setVisible(true);
     }//GEN-LAST:event_btnventasMouseClicked
 
+    private void btncajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncajaActionPerformed
+        
+    }//GEN-LAST:event_btncajaActionPerformed
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+        this.dispose();
+        LoginPrincipal_1 Lp= new LoginPrincipal_1();
+        Lp.setVisible(true);
+    }//GEN-LAST:event_jButton7MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -334,7 +364,6 @@ public class FrmCorteDeCaja extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
@@ -343,6 +372,7 @@ public class FrmCorteDeCaja extends javax.swing.JFrame {
     private javax.swing.JPanel panelArriba;
     private javax.swing.JPanel panelMenu;
     private javax.swing.JPanel panelPrincipal;
+    private javax.swing.JPanel pnPrincipal;
     // End of variables declaration//GEN-END:variables
 
 }
