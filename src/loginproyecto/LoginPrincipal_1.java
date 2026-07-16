@@ -3,19 +3,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package loginproyecto;
-
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 /**
  *
  * @author cobaa
  */
-public class LoginPrincipal extends javax.swing.JFrame {
+public class LoginPrincipal_1 extends javax.swing.JFrame {
+
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(LoginPrincipal_1.class.getName());
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(LoginPrincipal.class.getName());
 
     /**
      * Creates new form LoginPrincipal
      */
-    public LoginPrincipal() {
+    public LoginPrincipal_1() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -36,13 +40,16 @@ public class LoginPrincipal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        TxtUsuario = new javax.swing.JTextField();
+        TxtPassword = new javax.swing.JPasswordField();
+        lblError = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 255, 51));
+        setSize(new java.awt.Dimension(0, 0));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setMaximumSize(new java.awt.Dimension(647205983, 8376189));
         jPanel1.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jPanel1AncestorAdded(evt);
@@ -52,24 +59,27 @@ public class LoginPrincipal extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
+        jPanel1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPanel1KeyPressed(evt);
+            }
+        });
         jPanel1.setLayout(new java.awt.GridBagLayout());
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 37;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 15, 0, 0);
         jPanel1.add(jLabel1, gridBagConstraints);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/de.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.gridwidth = 6;
         gridBagConstraints.ipadx = -10;
         gridBagConstraints.ipady = -60;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(14, 38, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(30, 140, 0, 0);
         jPanel1.add(jLabel2, gridBagConstraints);
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -80,7 +90,7 @@ public class LoginPrincipal extends javax.swing.JFrame {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 18, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(0, 110, 0, 0);
         jPanel1.add(jLabel3, gridBagConstraints);
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
@@ -92,7 +102,7 @@ public class LoginPrincipal extends javax.swing.JFrame {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(14, 18, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(14, 110, 0, 0);
         jPanel1.add(jLabel4, gridBagConstraints);
 
         jButton1.setBackground(new java.awt.Color(255, 153, 0));
@@ -100,36 +110,53 @@ public class LoginPrincipal extends javax.swing.JFrame {
         jButton1.setText("Ingresar");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(this::jButton1ActionPerformed);
+        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton1KeyPressed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 7;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.ipadx = 28;
         gridBagConstraints.ipady = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(34, 14, 45, 0);
+        gridBagConstraints.insets = new java.awt.Insets(10, 24, 35, 0);
         jPanel1.add(jButton1, gridBagConstraints);
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TxtUsuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.gridwidth = 7;
         gridBagConstraints.ipadx = 176;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 18, 0, 78);
-        jPanel1.add(jTextField1, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(10, 110, 0, 128);
+        jPanel1.add(TxtUsuario, gridBagConstraints);
 
-        jPasswordField1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPasswordField1.addActionListener(this::jPasswordField1ActionPerformed);
+        TxtPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TxtPassword.addActionListener(this::TxtPasswordActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.gridwidth = 7;
         gridBagConstraints.ipadx = 176;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 18, 0, 78);
-        jPanel1.add(jPasswordField1, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(10, 110, 0, 128);
+        jPanel1.add(TxtPassword, gridBagConstraints);
+
+        lblError.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblError.setForeground(new java.awt.Color(204, 0, 0));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.ipadx = 120;
+        gridBagConstraints.ipady = 20;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(14, 4, 0, 0);
+        jPanel1.add(lblError, gridBagConstraints);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -137,16 +164,46 @@ public class LoginPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        
+    Conectar cc = new Conectar();
+    Connection con = cc.conectar();
+    String usuario = TxtUsuario.getText();
+    String password = String.valueOf(TxtPassword.getPassword());
+
+    try {
+        String sql = "SELECT * FROM usuario WHERE usuario=? AND contraseña=?";
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setString(1, usuario);
+        ps.setString(2, password);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            JOptionPane.showMessageDialog(null, "Acceso permitido");
+            FrmPrincipal p = new FrmPrincipal();
+            p.setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrectos");
+        }
+    } catch (Exception e) {
+        System.out.println(e.getMessage());
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jPanel1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel1AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel1AncestorAdded
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void TxtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_TxtPasswordActionPerformed
+
+    private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1KeyPressed
+
+    private void jPanel1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanel1KeyPressed
+        
+    }//GEN-LAST:event_jPanel1KeyPressed
 
     /**
      * @param args the command line arguments
@@ -170,17 +227,18 @@ public class LoginPrincipal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new LoginPrincipal().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new LoginPrincipal_1().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField TxtPassword;
+    private javax.swing.JTextField TxtUsuario;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lblError;
     // End of variables declaration//GEN-END:variables
 }
