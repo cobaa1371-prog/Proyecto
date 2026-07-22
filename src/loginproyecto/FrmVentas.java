@@ -6,6 +6,9 @@ package loginproyecto;
 
 
 import Panel.CorteCaja;
+import Panel.Inventario;
+import Panel.Notificaciones;
+import Panel.Transacciones;
 import Panel.Ventas;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -61,7 +64,7 @@ public class FrmVentas extends javax.swing.JFrame {
         btncaja = new javax.swing.JButton();
         btninventario = new javax.swing.JButton();
         btnnoti = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btnTrans = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jPanel4 = new javax.swing.JPanel();
@@ -82,6 +85,7 @@ public class FrmVentas extends javax.swing.JFrame {
         btnmenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/barra-de-menus.png"))); // NOI18N
         btnmenu.setToolTipText("");
         btnmenu.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(255, 153, 0), new java.awt.Color(255, 153, 0)));
+        btnmenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnmenu.addActionListener(this::btnmenuActionPerformed);
         panelArriba.add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 47, 38));
 
@@ -130,13 +134,15 @@ public class FrmVentas extends javax.swing.JFrame {
         btnnoti.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/activo.png"))); // NOI18N
         btnnoti.setText("Notificaciones");
         btnnoti.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnnoti.addActionListener(this::btnnotiActionPerformed);
 
-        jButton6.setBackground(new java.awt.Color(102, 102, 102));
-        jButton6.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/transaccion.png"))); // NOI18N
-        jButton6.setText("Transacciones");
-        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnTrans.setBackground(new java.awt.Color(102, 102, 102));
+        btnTrans.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
+        btnTrans.setForeground(new java.awt.Color(255, 255, 255));
+        btnTrans.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/transaccion.png"))); // NOI18N
+        btnTrans.setText("Transacciones");
+        btnTrans.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnTrans.addActionListener(this::btnTransActionPerformed);
 
         jButton7.setBackground(new java.awt.Color(102, 102, 102));
         jButton7.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
@@ -194,7 +200,7 @@ public class FrmVentas extends javax.swing.JFrame {
                 .addComponent(btnnoti))
             .addGroup(panelMenuLayout.createSequentialGroup()
                 .addGap(11, 11, 11)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnTrans, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(panelMenuLayout.createSequentialGroup()
                 .addGap(5, 5, 5)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -216,7 +222,7 @@ public class FrmVentas extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnnoti, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnTrans, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
@@ -240,18 +246,17 @@ public class FrmVentas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnventasActionPerformed
 
     private void btninventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninventarioActionPerformed
-        // TODO add your handling code here:
+        new CambiaPanel(panelPrincipal, new Inventario());
     }//GEN-LAST:event_btninventarioActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void btnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenuActionPerformed
      int posicion = this.panelMenu.getX();
         if (posicion > -1) {
             Animacion.Animacion.mover_izquierda(0, -190, 2, 2, panelMenu);
-            
             
         }else{
             Animacion.Animacion.mover_derecha(-190, 0, 2, 2, panelMenu);
@@ -279,6 +284,14 @@ public class FrmVentas extends javax.swing.JFrame {
         Lp.setVisible(true);
     }//GEN-LAST:event_jButton7MouseClicked
 
+    private void btnnotiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnotiActionPerformed
+        new CambiaPanel(panelPrincipal, new Notificaciones());
+    }//GEN-LAST:event_btnnotiActionPerformed
+
+    private void btnTransActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransActionPerformed
+        new CambiaPanel(panelPrincipal, new Transacciones());
+    }//GEN-LAST:event_btnTransActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -305,12 +318,12 @@ public class FrmVentas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnTrans;
     private javax.swing.JButton btncaja;
     private javax.swing.JButton btninventario;
     private javax.swing.JButton btnmenu;
     private javax.swing.JButton btnnoti;
     private javax.swing.JButton btnventas;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel4;
