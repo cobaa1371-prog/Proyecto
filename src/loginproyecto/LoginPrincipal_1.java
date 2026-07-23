@@ -75,7 +75,7 @@ public class LoginPrincipal_1 extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.gridwidth = 6;
         gridBagConstraints.ipadx = -5;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -83,8 +83,8 @@ public class LoginPrincipal_1 extends javax.swing.JFrame {
         jPanel1.add(jLabel2, gridBagConstraints);
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 204, 0));
         jLabel3.setText("Usuario:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -94,8 +94,8 @@ public class LoginPrincipal_1 extends javax.swing.JFrame {
         jPanel1.add(jLabel3, gridBagConstraints);
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 204, 0));
         jLabel4.setText("Contraseña:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -105,10 +105,11 @@ public class LoginPrincipal_1 extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(14, 110, 0, 0);
         jPanel1.add(jLabel4, gridBagConstraints);
 
-        jButton1.setBackground(new java.awt.Color(255, 153, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 204, 0));
         jButton1.setText("Ingresar");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(153, 153, 153))); // NOI18N
         jButton1.addActionListener(this::jButton1ActionPerformed);
         jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -116,21 +117,21 @@ public class LoginPrincipal_1 extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipadx = 28;
-        gridBagConstraints.ipady = 4;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.ipadx = 123;
+        gridBagConstraints.ipady = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 24, 35, 0);
+        gridBagConstraints.insets = new java.awt.Insets(10, 142, 25, 0);
         jPanel1.add(jButton1, gridBagConstraints);
 
         TxtUsuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 6;
-        gridBagConstraints.ipadx = 176;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.ipadx = 196;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(10, 110, 0, 0);
         jPanel1.add(TxtUsuario, gridBagConstraints);
@@ -140,8 +141,8 @@ public class LoginPrincipal_1 extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 6;
-        gridBagConstraints.ipadx = 176;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.ipadx = 196;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(10, 110, 0, 0);
         jPanel1.add(TxtPassword, gridBagConstraints);
@@ -149,13 +150,13 @@ public class LoginPrincipal_1 extends javax.swing.JFrame {
         lblError.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblError.setForeground(new java.awt.Color(204, 0, 0));
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.ipadx = 120;
         gridBagConstraints.ipady = 20;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(14, 4, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(14, 170, 0, 0);
         jPanel1.add(lblError, gridBagConstraints);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
