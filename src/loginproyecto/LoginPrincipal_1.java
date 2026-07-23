@@ -71,15 +71,15 @@ public class LoginPrincipal_1 extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         jPanel1.add(jLabel1, gridBagConstraints);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/de.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ChatGPT Image 23 jul 2026, 12_21_09 p.m..png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 6;
-        gridBagConstraints.ipadx = -10;
-        gridBagConstraints.ipady = -60;
+        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.ipadx = -5;
+        gridBagConstraints.ipady = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(30, 140, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(24, 16, 0, 17);
         jPanel1.add(jLabel2, gridBagConstraints);
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -90,7 +90,7 @@ public class LoginPrincipal_1 extends javax.swing.JFrame {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 110, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 110, 0, 0);
         jPanel1.add(jLabel3, gridBagConstraints);
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
@@ -129,10 +129,10 @@ public class LoginPrincipal_1 extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.gridwidth = 6;
         gridBagConstraints.ipadx = 176;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 110, 0, 128);
+        gridBagConstraints.insets = new java.awt.Insets(10, 110, 0, 0);
         jPanel1.add(TxtUsuario, gridBagConstraints);
 
         TxtPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -140,10 +140,10 @@ public class LoginPrincipal_1 extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.gridwidth = 6;
         gridBagConstraints.ipadx = 176;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 110, 0, 128);
+        gridBagConstraints.insets = new java.awt.Insets(10, 110, 0, 0);
         jPanel1.add(TxtPassword, gridBagConstraints);
 
         lblError.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
